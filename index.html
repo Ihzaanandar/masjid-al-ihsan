@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Masjid Al Ihsan</title>
+    <link rel="shortcut icon" href="images/umum/favicon.png" type="image/png">
+    <link rel="icon" href="images/umum/favicon.png" type="image/png" sizes="any">
+    <link rel="apple-touch-icon" href="images/umum/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
+                            500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(16, 185, 129, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+        .nav-scrolled a.nav-link { color: #475569 !important; }
+        .nav-scrolled a.nav-link:hover { background-color: #f1f5f9 !important; }
+        .nav-scrolled .brand-text { color: #1e293b !important; }
+        .nav-scrolled #menu-btn { color: #334155 !important; }
+        .nav-scrolled #menu-btn:hover { background-color: #f1f5f9 !important; }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white overflow-x-hidden selection:bg-primary-500 selection:text-white relative font-sans text-slate-900">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent py-4 border-b border-transparent" id="navbar">
+        <div class="container mx-auto px-6 relative flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 font-extrabold text-2xl tracking-tight group">
+                <img src="images/umum/logo-masjid.png" alt="Logo Masjid Al Ihsan" class="w-10 h-10 object-contain rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300 bg-white p-1">
+                <span class="brand-text text-white transition-colors duration-300">Al Ihsan</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-1 font-semibold">
+                <a href="index.html" class="nav-link text-white px-5 py-2 hover:bg-white/20 rounded-full transition-all duration-300">Beranda</a>
+                <a href="pages/profil.html" class="nav-link text-white/90 px-5 py-2 hover:bg-white/20 rounded-full transition-all duration-300">Profil</a>
+                <a href="pages/program.html" class="nav-link text-white/90 px-5 py-2 hover:bg-white/20 rounded-full transition-all duration-300">Program</a>
+                <a href="pages/pembangunan.html" class="nav-link text-white/90 px-5 py-2 hover:bg-white/20 rounded-full transition-all duration-300">Pembangunan</a>
+                <a href="pages/infaq.html" class="nav-link text-white/90 px-5 py-2 hover:bg-white/20 rounded-full transition-all duration-300">Infaq</a>
+                <a href="pages/kontak.html" class="ml-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300">Kontak</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white text-2xl p-2 rounded-lg hover:bg-white/20 transition-colors"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass p-6 space-y-4 shadow-xl border-t border-slate-100">
+            <a href="index.html" class="block px-4 py-3 rounded-xl bg-primary-50 text-primary-700 font-bold mobile-link">Beranda</a>
+            <a href="pages/profil.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Profil</a>
+            <a href="pages/program.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Program</a>
+            <a href="pages/pembangunan.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Pembangunan</a>
+            <a href="pages/infaq.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Infaq</a>
+            <a href="pages/kontak.html" class="block px-4 py-3 rounded-xl bg-primary-600 font-bold text-white text-center mt-6 shadow-md mobile-link">Kontak Kami</a>
+        </div>
+    </nav>
+
+    <!-- 1. BERANDA SECTION -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-20 pb-32">
+        <div class="absolute inset-0 z-0">
+            <img src="images/beranda/masjid-beranda.jpg" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1920&q=80'">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="relative z-10 px-6 w-full max-w-5xl mx-auto text-center mt-12">
+            <h1 class="fade-in-up text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-lg" style="animation-delay: 0.2s;">
+                Membangun Peradaban<br class="hidden md:block">
+                <span class="text-primary-400">Dari Masjid</span>
+            </h1>
+            <p class="fade-in-up text-lg md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-md" style="animation-delay: 0.3s;">
+                Pusat ibadah yang nyaman, ramah anak, dan menyejukkan hati.
+            </p>
+            <div class="fade-in-up flex flex-col sm:flex-row justify-center items-center gap-4 mt-4" style="animation-delay: 0.4s;">
+                <a href="pages/infaq.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-primary-600 text-white font-bold text-lg hover:bg-primary-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fas fa-hand-holding-heart"></i> Infaq Sekarang
+                </a>
+                <a href="pages/profil.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold text-lg hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3">
+                    Tentang Kami <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JADWAL SHALAT (Floating Overlap) -->
+    <div class="relative z-30 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 md:-mt-24 mb-16 md:mb-24 fade-in-up" style="animation-delay: 0.6s;">
+        <div class="bg-white rounded-3xl shadow-soft p-6 md:p-8 border border-slate-100">
+            <div id="prayer-grid" class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="imsak" data-time="04:05">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Imsak</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">04:05</p>
+                </div>
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="subuh" data-time="04:15">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Subuh</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">04:15</p>
+                </div>
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="dzuhur" data-time="11:50">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Dzuhur</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">11:50</p>
+                </div>
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="ashar" data-time="15:15">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Ashar</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">15:15</p>
+                </div>
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="maghrib" data-time="17:55">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Maghrib</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">17:55</p>
+                </div>
+                <div class="prayer-card text-center group p-4 rounded-2xl border border-slate-100 shadow-sm bg-white hover:-translate-y-1 hover:shadow-md transition-all duration-300 relative overflow-hidden" data-prayer="isya" data-time="19:10">
+                    <p class="prayer-label text-xs md:text-sm text-slate-500 font-bold uppercase tracking-wider mb-1">Isya</p>
+                    <p class="prayer-time text-xl md:text-2xl font-extrabold text-slate-800">19:10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. LAYANAN SECTION (Summary) -->
+    <section class="py-16 md:py-24 bg-slate-50 border-y border-slate-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-primary-600 font-bold tracking-widest uppercase text-sm mb-3 px-4 py-2 bg-primary-50 rounded-full inline-block">Layanan & Fasilitas</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-slate-800 mb-6">Program Masjid</h3>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto">Masjid Al Ihsan tidak hanya sebagai tempat ibadah, tetapi juga pusat pendidikan dan sosial kemasyarakatan yang memberdayakan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-16">
+                <div class="group bg-white rounded-3xl p-8 shadow-soft border border-slate-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-quran"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-4">TPA Anak Sholeh</h4>
+                    <p class="text-slate-500 leading-relaxed">Pendidikan Al-Qur'an dan akhlak gratis untuk anak-anak, mendidik generasi rabbani yang cerdas dan berakhlak mulia.</p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-soft border border-slate-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-4">Kajian Rutin</h4>
+                    <p class="text-slate-500 leading-relaxed">Kajian tafsir, hadits, dan fiqih yang diadakan secara rutin setiap pekan, dibimbing oleh para asatidz berpengalaman.</p>
+                </div>
+
+                <div class="group bg-white rounded-3xl p-8 shadow-soft border border-slate-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-sky-50 text-sky-500 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-4">Ambulan Gratis</h4>
+                    <p class="text-slate-500 leading-relaxed">Layanan antar jemput pasien dhuafa dan pengurusan jenazah 24 jam untuk warga di lingkungan sekitar masjid.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="pages/program.html" class="inline-flex items-center gap-2 font-bold text-primary-600 hover:text-primary-700 transition-colors group">
+                    Lihat Semua Program <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE SEPARATOR -->
+    <section class="py-20 md:py-32 bg-gradient-to-br from-primary-50 to-emerald-100 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/20 backdrop-blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10 max-w-4xl">
+            <i class="fas fa-quote-left text-4xl text-primary-300 mb-8 block"></i>
+            <h2 class="text-2xl md:text-4xl font-semibold text-slate-800 leading-relaxed mb-8">"Hanyalah yang memakmurkan masjid-masjid Allah ialah orang-orang yang beriman kepada Allah dan hari kemudian..."</h2>
+            <p class="text-primary-600 font-bold tracking-widest uppercase text-sm">QS. At-Taubah: 18</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-20 pb-10 border-t border-slate-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-5">
+                    <a href="index.html" class="flex items-center gap-3 text-slate-800 font-extrabold text-2xl tracking-tight mb-6">
+                        <img src="images/umum/logo-masjid.png" alt="Logo" class="w-10 h-10 rounded-xl bg-white shadow-sm object-contain">
+                        Al Ihsan
+                    </a>
+                    <p class="text-slate-500 leading-relaxed max-w-sm mb-8">Pusat ibadah dan kegiatan keumatan yang berkomitmen membangun peradaban Islam yang rahmatan lil 'alamin.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-slate-500">
+                        <li><a href="pages/profil.html" class="hover:text-primary-500 transition-colors">Tentang Kami</a></li>
+                        <li><a href="pages/program.html" class="hover:text-primary-500 transition-colors">Program Masjid</a></li>
+                        <li><a href="pages/pembangunan.html" class="hover:text-primary-500 transition-colors">Pembangunan</a></li>
+                        <li><a href="pages/infaq.html" class="hover:text-primary-500 transition-colors">Layanan ZISWAF</a></li>
+                        <li><a href="pages/kontak.html" class="hover:text-primary-500 transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Lokasi</h4>
+                    <div class="flex items-start gap-4 text-slate-500">
+                        <i class="fas fa-map-marker-alt text-primary-500 mt-1 text-lg"></i>
+                        <p class="leading-relaxed">Jl. Kebahagiaan No. 99, Kel. Damai, Kec. Sejahtera, Kota Baru, 12345.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-100 pt-8 text-center text-slate-400 text-sm">
+                <p>© 2026 Masjid Al Ihsan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Navbar Scroll Effect
+        const nav = document.getElementById('navbar');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('glass', 'py-3', 'nav-scrolled');
+                nav.classList.remove('py-4', 'bg-transparent', 'border-transparent');
+            } else {
+                nav.classList.remove('glass', 'py-3', 'nav-scrolled');
+                nav.classList.add('py-4', 'bg-transparent', 'border-transparent');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 3. Fetch Live Prayer Times
+        const PRAYER_API = 'https://api.aladhan.com/v1/timingsByCity?city=Yogyakarta&country=Indonesia&method=20';
+        const PRAYER_MAP = {
+            Imsak: 'imsak', Fajr: 'subuh', Dhuhr: 'dzuhur', Asr: 'ashar', Maghrib: 'maghrib', Isha: 'isya'
+        };
+
+        async function fetchPrayerTimes() {
+            try {
+                const res = await fetch(PRAYER_API);
+                const json = await res.json();
+                const timings = json.data.timings;
+
+                Object.entries(PRAYER_MAP).forEach(([apiKey, dataKey]) => {
+                    const card = document.querySelector(`.prayer-card[data-prayer="${dataKey}"]`);
+                    if (!card) return;
+                    const cleanTime = timings[apiKey].split(' ')[0];
+                    card.dataset.time = cleanTime;
+                    card.querySelector('.prayer-time').textContent = cleanTime;
+                });
+
+                highlightCurrentPrayer();
+            } catch (err) {
+                console.warn('Gagal mengambil jadwal shalat dari API, menggunakan waktu default.', err);
+                highlightCurrentPrayer();
+            }
+        }
+
+        // 4. Dynamic Prayer Time Highlight
+        function highlightCurrentPrayer() {
+            const now = new Date();
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+            const cards = document.querySelectorAll('.prayer-card');
+            const prayerTimes = [];
+
+            cards.forEach(card => {
+                const [h, m] = card.dataset.time.split(':').map(Number);
+                prayerTimes.push({ el: card, minutes: h * 60 + m });
+            });
+
+            let activeIndex = -1;
+            for (let i = prayerTimes.length - 1; i >= 0; i--) {
+                if (currentMinutes >= prayerTimes[i].minutes) {
+                    activeIndex = i; break;
+                }
+            }
+            if (activeIndex === -1) activeIndex = prayerTimes.length - 1;
+
+            cards.forEach(card => {
+                card.classList.remove('bg-primary-500', 'text-white', 'scale-105', 'shadow-md', 'border-primary-500');
+                card.classList.add('bg-white', 'text-slate-800', 'border-slate-100');
+                card.querySelector('.prayer-label').classList.remove('text-primary-100');
+                card.querySelector('.prayer-label').classList.add('text-slate-500');
+                card.querySelector('.prayer-time').classList.remove('text-white');
+                card.querySelector('.prayer-time').classList.add('text-slate-800');
+                
+                const badge = card.querySelector('.active-badge');
+                if (badge) badge.remove();
+            });
+
+            const activeCard = prayerTimes[activeIndex].el;
+            activeCard.classList.remove('bg-white', 'text-slate-800', 'border-slate-100');
+            activeCard.classList.add('bg-primary-500', 'text-white', 'scale-105', 'shadow-md', 'border-primary-500');
+            
+            const label = activeCard.querySelector('.prayer-label');
+            label.classList.remove('text-slate-500');
+            label.classList.add('text-primary-100');
+
+            const timeEl = activeCard.querySelector('.prayer-time');
+            timeEl.classList.remove('text-slate-800');
+            timeEl.classList.add('text-white');
+
+            const badge = document.createElement('span');
+            badge.className = 'active-badge absolute top-2 right-2 flex h-2 w-2';
+            badge.innerHTML = '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>';
+            activeCard.appendChild(badge);
+        }
+
+        fetchPrayerTimes();
+        setInterval(highlightCurrentPrayer, 60000);
+        setInterval(fetchPrayerTimes, 6 * 60 * 60 * 1000);
+    </script>
+</body>
+</html>

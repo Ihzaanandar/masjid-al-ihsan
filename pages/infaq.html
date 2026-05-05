@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infaq & ZISWAF - Masjid Al Ihsan</title>
+    <link rel="shortcut icon" href="../images/umum/favicon.png" type="image/png">
+    <link rel="icon" href="../images/umum/favicon.png" type="image/png" sizes="any">
+    <link rel="apple-touch-icon" href="../images/umum/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
+                            500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+                        'glow': '0 0 20px rgba(16, 185, 129, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+        .glass {
+            background: rgba(255, 255, 255, 0.85) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white relative font-sans text-slate-900">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 glass py-4" id="navbar">
+        <div class="container mx-auto px-6 relative flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3 font-extrabold text-2xl tracking-tight group">
+                <img src="../images/umum/logo-masjid.png" alt="Logo Masjid Al Ihsan" class="w-10 h-10 object-contain rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300 bg-white p-1">
+                <span class="text-slate-800">Al Ihsan</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-1 font-semibold">
+                <a href="../index.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Beranda</a>
+                <a href="profil.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Profil</a>
+                <a href="program.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Program</a>
+                <a href="pembangunan.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Pembangunan</a>
+                <a href="infaq.html" class="text-primary-600 bg-primary-50 px-5 py-2 rounded-full transition-all duration-300">Infaq</a>
+                <a href="kontak.html" class="ml-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300">Kontak</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-slate-700 text-2xl p-2 rounded-lg hover:bg-slate-100 transition-colors"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass p-6 space-y-4 shadow-xl border-t border-slate-100">
+            <a href="../index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Beranda</a>
+            <a href="profil.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Profil</a>
+            <a href="program.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Program</a>
+            <a href="pembangunan.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Pembangunan</a>
+            <a href="infaq.html" class="block px-4 py-3 rounded-xl bg-primary-50 text-primary-700 font-bold mobile-link">Infaq</a>
+            <a href="kontak.html" class="block px-4 py-3 rounded-xl bg-primary-600 font-bold text-white text-center mt-6 shadow-md mobile-link">Kontak Kami</a>
+        </div>
+    </nav>
+
+    <header class="pt-32 md:pt-44 pb-16 md:pb-24 bg-gradient-to-b from-primary-50 to-slate-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -z-0 -translate-x-1/2 translate-y-1/2"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 fade-in-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 mb-4 tracking-tight">Salurkan <span class="text-primary-600">Infaq Terbaik</span></h1>
+            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">"Perumpamaan orang-orang yang menafkahkan hartanya di jalan Allah adalah serupa dengan sebutir benih yang menumbuhkan tujuh bulir."</p>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 md:px-6 pb-16 md:pb-24 relative z-20 mt-12">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-soft border border-slate-100 p-6 md:p-14 flex flex-col items-center fade-in-up" style="animation-delay: 0.2s;">
+
+            <p class="text-slate-600 mb-8 font-semibold text-center text-lg">Scan barcode QRIS di bawah ini menggunakan Mobile Banking atau Dompet Digital Anda.</p>
+
+            <div class="inline-block bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mb-12 relative group hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <img src="/images/infaq/qris.jpeg" alt="QRIS" class="w-64 h-64 object-contain mx-auto rounded-xl">
+                <div class="mt-6 flex items-center justify-center bg-slate-50 py-3 rounded-xl border border-slate-100">
+                    <img src="/images/infaq/qris_logo.png" alt="QRIS Logo" class="h-8">
+                </div>
+            </div>
+
+            <div class="w-full max-w-md space-y-6">
+                <div class="flex items-center gap-4 text-slate-400">
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                    <span class="text-sm font-semibold uppercase tracking-widest text-slate-500">Atau Transfer Manual</span>
+                    <div class="h-px bg-slate-200 flex-1"></div>
+                </div>
+
+                <div class="bg-primary-50 p-8 rounded-2xl flex items-center justify-between border border-primary-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all relative">
+                    <div class="pl-2">
+                        <p class="text-sm font-bold text-primary-700 tracking-wider mb-2">Bank Syariah Indonesia (BSI)</p>
+                        <p class="text-3xl font-extrabold text-slate-800 tracking-wider mb-2">7788 1234 56</p>
+                        <p class="text-sm font-semibold text-slate-500 uppercase">a.n Masjid Al Ihsan</p>
+                    </div>
+                    <button id="copy-btn" class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-primary-600 shadow-sm border border-slate-100 hover:bg-primary-600 hover:text-white transition-all cursor-pointer" title="Salin Rekening">
+                        <i class="far fa-copy text-xl" id="copy-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-slate-50 p-8 rounded-2xl w-full text-center border border-slate-100">
+                <p class="text-slate-600 font-semibold mb-6">Mohon bantu kami mencatat donasi Anda dengan melakukan konfirmasi.</p>
+                <a href="https://wa.me/6281234567890" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-primary-600 hover:from-emerald-600 hover:to-primary-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                    <i class="fab fa-whatsapp text-2xl"></i> Konfirmasi via WhatsApp
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white pt-20 pb-10 border-t border-slate-100 mt-auto">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-5">
+                    <a href="../index.html" class="flex items-center gap-3 text-slate-800 font-extrabold text-2xl tracking-tight mb-6">
+                        <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-10 h-10 rounded-xl bg-white shadow-sm object-contain">
+                        Al Ihsan
+                    </a>
+                    <p class="text-slate-500 leading-relaxed max-w-sm mb-8">Pusat ibadah dan kegiatan keumatan yang berkomitmen membangun peradaban Islam yang rahmatan lil 'alamin.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-3">
+                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-slate-500">
+                        <li><a href="profil.html" class="hover:text-primary-500 transition-colors">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-primary-500 transition-colors">Program Masjid</a></li>
+                        <li><a href="pembangunan.html" class="hover:text-primary-500 transition-colors">Pembangunan</a></li>
+                        <li><a href="infaq.html" class="hover:text-primary-500 transition-colors">Layanan ZISWAF</a></li>
+                        <li><a href="kontak.html" class="hover:text-primary-500 transition-colors">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Lokasi</h4>
+                    <div class="flex items-start gap-4 text-slate-500">
+                        <i class="fas fa-map-marker-alt text-primary-500 mt-1 text-lg"></i>
+                        <p class="leading-relaxed">Jl. Kebahagiaan No. 99, Kel. Damai, Kec. Sejahtera, Kota Baru, 12345.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-100 pt-8 text-center text-slate-400 text-sm">
+                <p>© 2026 Masjid Al Ihsan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-3 bg-slate-800 text-white px-6 py-4 rounded-xl shadow-lg transition-all duration-500 translate-y-20 opacity-0 pointer-events-none">
+        <div class="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center shrink-0">
+            <i class="fas fa-check text-sm"></i>
+        </div>
+        <span class="font-semibold text-sm">Nomor rekening berhasil disalin!</span>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Copy to clipboard & show toast
+        const copyBtn = document.getElementById('copy-btn');
+        const copyIcon = document.getElementById('copy-icon');
+        const toast = document.getElementById('toast');
+
+        copyBtn.addEventListener('click', () => {
+            const rekening = '7788123456';
+            navigator.clipboard.writeText(rekening).then(() => {
+                // Change icon to checkmark
+                copyIcon.className = 'fas fa-check text-2xl text-primary-500';
+                setTimeout(() => { copyIcon.className = 'far fa-copy text-2xl'; }, 2000);
+
+                // Show toast
+                toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                }, 2500);
+            });
+        });
+    </script>
+</body>
+
+</html>
