@@ -4,253 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progres Pembangunan - Masjid Al Ihsan</title>
+    <meta name="description" content="Transparansi progres fisik dan laporan keuangan pembangunan area Masjid Al Ihsan.">
     <link rel="shortcut icon" href="../images/umum/favicon.png" type="image/png">
-    <link rel="icon" href="../images/umum/favicon.png" type="image/png" sizes="any">
-    <link rel="apple-touch-icon" href="../images/umum/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
-                    colors: {
-                        primary: {
-                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
-                            500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
-                        'glow': '0 0 20px rgba(16, 185, 129, 0.4)'
-                    }
-                }
-            }
-        }
-    </script>
+    
+    <!-- Tailwind & Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
     <style>
-        html { scroll-behavior: smooth; }
-        body { -webkit-font-smoothing: antialiased; }
-        .glass {
-            background: rgba(255, 255, 255, 0.85) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
-        }
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        @keyframes shimmer { 100% { transform: translateX(100%); } }
+        /* Lightbox */
+        .lightbox-overlay { position: fixed; inset: 0; background: rgba(2,44,34,0.9); z-index: 100; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(8px); }
+        .lightbox-overlay.active { opacity: 1; pointer-events: all; }
+        .lightbox-overlay img { max-width: 90vw; max-height: 85vh; border-radius: 4px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease; }
+        .lightbox-overlay.active img { transform: scale(1); }
+        .lightbox-caption { position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); color: white; font-weight: 500; font-family: 'Playfair Display', serif; font-size: 1.25rem; }
+        .lightbox-close { position: absolute; top: 24px; right: 24px; color: white; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); transition: background 0.2s; border: 1px solid rgba(255,255,255,0.2); }
+        .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+        /* Progress bar animation */
+        .progress-fill { animation: progressGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; width: 0; }
+        @keyframes progressGrow { to { width: var(--progress); } }
     </style>
 </head>
-<body class="bg-slate-50 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white relative font-sans text-slate-900">
+<body class="bg-pearl-100 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white font-sans text-slate-800">
 
-    <nav class="fixed w-full z-50 transition-all duration-300 glass py-4" id="navbar">
-        <div class="container mx-auto px-6 relative flex justify-between items-center">
-            <a href="../index.html" class="flex items-center gap-3 font-extrabold text-2xl tracking-tight group">
-                <img src="../images/umum/logo-masjid.png" alt="Logo Masjid Al Ihsan" class="w-10 h-10 object-contain rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300 bg-white p-1">
-                <span class="text-slate-800">Al Ihsan</span>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav py-3" id="navbar">
+        <div class="container mx-auto px-6 max-w-7xl relative flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3 font-serif text-2xl font-bold tracking-wide">
+                <img src="../images/umum/logo-masjid.png" alt="Logo Masjid" class="w-9 h-9 object-contain drop-shadow-sm">
+                <span class="text-primary-950">Al Ihsan</span>
             </a>
-            <div class="hidden md:flex items-center space-x-1 font-semibold">
-                <a href="../index.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Beranda</a>
-                <a href="profil.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Profil</a>
-                <a href="program.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Program</a>
-                <a href="pembangunan.html" class="text-primary-600 bg-primary-50 px-5 py-2 rounded-full transition-all duration-300">Pembangunan</a>
-                <a href="infaq.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Infaq</a>
-                <a href="kontak.html" class="ml-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300">Kontak</a>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="../index.html" class="text-slate-600 hover:text-primary-800 transition-colors">Beranda</a>
+                <a href="profil.html" class="text-slate-600 hover:text-primary-800 transition-colors">Profil</a>
+                <a href="program.html" class="text-slate-600 hover:text-primary-800 transition-colors">Program</a>
+                <a href="pembangunan.html" class="text-primary-800 border-b-2 border-primary-800 pb-1">Pembangunan</a>
+                <a href="infaq.html" class="text-slate-600 hover:text-primary-800 transition-colors">Infaq</a>
+                <a href="kontak.html" class="ml-4 px-6 py-2 bg-primary-900 text-white rounded hover:bg-primary-800 transition-colors shadow-subtle">Kontak</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-slate-700 text-2xl p-2 rounded-lg hover:bg-slate-100 transition-colors"><i class="fas fa-bars"></i></button>
+            <button id="menu-btn" class="md:hidden text-primary-950 text-2xl p-2" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass p-6 space-y-4 shadow-xl border-t border-slate-100">
-            <a href="../index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Beranda</a>
-            <a href="profil.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Profil</a>
-            <a href="program.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Program</a>
-            <a href="pembangunan.html" class="block px-4 py-3 rounded-xl bg-primary-50 text-primary-700 font-bold mobile-link">Pembangunan</a>
-            <a href="infaq.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Infaq</a>
-            <a href="kontak.html" class="block px-4 py-3 rounded-xl bg-primary-600 font-bold text-white text-center mt-6 shadow-md mobile-link">Kontak Kami</a>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-t border-slate-200 shadow-xl rounded-b-3xl">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="../index.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Beranda</a>
+                <a href="profil.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Profil</a>
+                <a href="program.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Program</a>
+                <a href="pembangunan.html" class="text-primary-900 font-semibold pb-2 border-b border-slate-100">Pembangunan</a>
+                <a href="infaq.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Infaq</a>
+                <a href="kontak.html" class="bg-primary-900 text-white text-center py-4 rounded-xl mt-4 font-bold text-lg shadow-sm">Kontak Kami</a>
+            </div>
         </div>
     </nav>
 
-    <header class="pt-32 md:pt-44 pb-16 md:pb-24 bg-gradient-to-b from-primary-50 to-slate-50 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -z-0 -translate-x-1/2 translate-y-1/2"></div>
+    <header class="pt-32 md:pt-40 pb-16 md:pb-24 bg-pearl-200 border-b border-slate-200 relative overflow-hidden section-pattern">
         <div class="container mx-auto px-6 text-center relative z-10 fade-in-up">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 mb-4 tracking-tight">Progres <span class="text-primary-600">Pembangunan</span></h1>
-            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Transparansi dokumen proposal dan dokumentasi visual pembangunan menara Masjid Al Ihsan.</p>
+            <span class="text-accent-600 font-semibold tracking-widest uppercase text-xs">Transparansi Laporan</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-950 mt-3 mb-6">Progres Pembangunan</h1>
+            <p class="text-slate-600 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Informasi terkini mengenai perkembangan fisik dan kebutuhan pembangunan Masjid Al Ihsan.</p>
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 md:px-6 pb-16 md:pb-24 relative z-20 max-w-6xl">
-        
-        <!-- Status Progres -->
-        <div class="bg-white p-6 md:p-12 rounded-3xl shadow-soft border border-slate-100 mb-12 md:mb-16 fade-in-up mt-12" style="animation-delay: 0.2s;">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="w-full md:w-1/2 text-center md:text-left">
-                    <h3 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4">Status Saat Ini: <span class="text-primary-500">Pengecoran Menara</span></h3>
-                    <p class="text-slate-600 font-medium leading-relaxed text-lg bg-slate-50 border border-slate-100 p-4 rounded-2xl shadow-sm">Alhamdulillah, berkat partisipasi jamaah, pembangunan menara setinggi 30 meter telah mencapai tahap pengecoran tingkat ke-3.</p>
-                </div>
-                <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative">
-                    <div class="flex mb-4 items-center justify-between">
-                        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Target</span>
-                        <span class="text-3xl font-extrabold text-primary-600">65%</span>
+    <main class="flex-grow container mx-auto px-4 md:px-6 pb-20 relative z-20 mt-12">
+        <div class="max-w-5xl mx-auto space-y-16">
+
+            <!-- Progress Status -->
+            <div class="bg-white rounded-sm shadow-subtle border border-slate-100 p-8 md:p-12 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+                    <div class="w-full md:w-1/3 border-b md:border-b-0 md:border-r border-slate-100 pb-6 md:pb-0 md:pr-8">
+                        <span class="text-accent-600 font-medium tracking-widest uppercase text-xs mb-2 block">Tahap Saat Ini</span>
+                        <h2 class="text-3xl font-serif font-bold text-primary-950 mb-3">Fase II</h2>
+                        <p class="text-slate-600 font-light text-sm">Perluasan Area Wudhu & Pembuatan Teras Samping</p>
                     </div>
-                    <div class="overflow-hidden h-4 flex rounded-full bg-slate-100">
-                        <div style="width:65%" class="bg-gradient-to-r from-primary-400 to-primary-600 rounded-full relative overflow-hidden shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)]">
-                            <div class="absolute inset-0 bg-white/20 w-1/2 skew-x-12 -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
+                    <div class="w-full md:w-2/3">
+                        <div class="flex justify-between items-end mb-4">
+                            <span class="text-sm font-medium text-slate-500 uppercase tracking-widest">Penyelesaian Fisik</span>
+                            <span class="text-4xl font-serif font-bold text-primary-800">65%</span>
+                        </div>
+                        <div class="overflow-hidden h-3 flex bg-pearl-200 rounded-sm">
+                            <div style="--progress:65%" class="progress-fill bg-primary-700"></div>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                            <p class="text-xs text-slate-400 font-light"><i class="fas fa-play text-[8px] mr-1 text-primary-300"></i> Dimulai: Jan 2026</p>
+                            <p class="text-xs text-slate-400 font-light"><i class="fas fa-flag text-[10px] mr-1 text-accent-500"></i> Target Selesai: Ags 2026</p>
                         </div>
                     </div>
-                    <p class="text-sm text-center text-slate-500 mt-6 font-semibold uppercase tracking-wider">Estimasi Selesai: <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-lg ml-2 font-bold">Ramadhan 2026</span></p>
                 </div>
             </div>
+
+            <!-- Dokumen Proposal -->
+            <div class="fade-in-up" style="animation-delay: 0.2s;">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-8 h-px bg-accent-500"></div>
+                    <h2 class="text-2xl font-serif text-primary-950">Dokumen Pembangunan</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="../files/proposal-pembangunan.pdf" download class="group flex items-center p-6 bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all">
+                        <div class="w-14 h-14 rounded bg-rose-50 text-rose-600 flex items-center justify-center text-2xl mr-6 border border-rose-100 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+                            <i class="far fa-file-pdf"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-serif font-bold text-primary-950 mb-1">Proposal Lengkap (RAB)</h4>
+                            <p class="text-slate-500 font-light text-xs">PDF Document &bull; 4.2 MB</p>
+                        </div>
+                        <div class="text-slate-300 group-hover:text-primary-600 transition-colors">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </a>
+                    <a href="../files/presentasi-pembangunan.pptx" download class="group flex items-center p-6 bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all">
+                        <div class="w-14 h-14 rounded bg-orange-50 text-orange-600 flex items-center justify-center text-2xl mr-6 border border-orange-100 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <i class="far fa-file-powerpoint"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-serif font-bold text-primary-950 mb-1">Presentasi Desain 3D</h4>
+                            <p class="text-slate-500 font-light text-xs">PowerPoint &bull; 12.5 MB</p>
+                        </div>
+                        <div class="text-slate-300 group-hover:text-primary-600 transition-colors">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Galeri Lapangan -->
+            <div class="fade-in-up" style="animation-delay: 0.3s;">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-8 h-px bg-accent-500"></div>
+                    <h2 class="text-2xl font-serif text-primary-950">Dokumentasi Lapangan</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="group relative rounded-sm overflow-hidden cursor-pointer aspect-video" onclick="openLightbox(this)" data-caption="Proses Pengecoran Atap">
+                        <img src="../images/pembangunan/ngecor.jpg" alt="Proses pengecoran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary-950/0 group-hover:bg-primary-950/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-white/90 text-primary-950 text-xs font-medium px-3 py-1 rounded-sm shadow-sm backdrop-blur-sm">Pengecoran</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-sm overflow-hidden cursor-pointer aspect-video" onclick="openLightbox(this)" data-caption="Tim Pekerja di Lapangan">
+                        <img src="../images/pembangunan/pekerja.jpg" alt="Tim pekerja" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary-950/0 group-hover:bg-primary-950/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-white/90 text-primary-950 text-xs font-medium px-3 py-1 rounded-sm shadow-sm backdrop-blur-sm">Tim Lapangan</span>
+                        </div>
+                    </div>
+                    <div class="group relative rounded-sm overflow-hidden cursor-pointer aspect-video col-span-2 md:col-span-1" onclick="openLightbox(this)" data-caption="Pengerjaan Pondasi Bangunan">
+                        <img src="../images/pembangunan/pondasi.jpg" alt="Pondasi bangunan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary-950/0 group-hover:bg-primary-950/20 transition-colors"></div>
+                        <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="bg-white/90 text-primary-950 text-xs font-medium px-3 py-1 rounded-sm shadow-sm backdrop-blur-sm">Pondasi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+                <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Tutup"><i class="fas fa-times font-light"></i></button>
+                <img id="lightbox-img" src="" alt="Foto pembangunan">
+                <div class="lightbox-caption drop-shadow-md" id="lightbox-caption"></div>
+            </div>
+
         </div>
-
-        <!-- Dokumen Proposal -->
-        <div class="mb-14 md:mb-20 fade-in-up" style="animation-delay: 0.3s;">
-            <div class="text-center mb-10">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-800">Dokumen Proposal</h3>
-                <p class="text-slate-500 mt-3 text-lg">Unduh dokumen resmi rencana anggaran dan desain arsitektur.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- PDF Card -->
-                <a href="../files/proposal-pembangunan.pdf" download="Proposal_Pembangunan_Masjid_Al_Ihsan.pdf" class="group flex items-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-16 h-16 rounded-xl bg-red-50 text-red-500 flex items-center justify-center text-3xl mr-6 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all duration-300 shrink-0">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="font-bold text-slate-800 text-lg mb-1">Proposal Lengkap (RAB)</h4>
-                        <p class="text-slate-500 font-medium text-sm">PDF Document • 4.2 MB</p>
-                    </div>
-                    <div class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors shrink-0">
-                        <i class="fas fa-download"></i>
-                    </div>
-                </a>
-
-                <!-- PPT Card -->
-                <a href="../files/presentasi-pembangunan.pptx" download="Presentasi_Pembangunan_Masjid_Al_Ihsan.pptx" class="group flex items-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                    <div class="w-16 h-16 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center text-3xl mr-6 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shrink-0">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="font-bold text-slate-800 text-lg mb-1">Presentasi Desain 3D</h4>
-                        <p class="text-slate-500 font-medium text-sm">PowerPoint • 12.5 MB</p>
-                    </div>
-                    <div class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors shrink-0">
-                        <i class="fas fa-download"></i>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Galeri Progres -->
-        <div class="fade-in-up mb-16" style="animation-delay: 0.4s;">
-            <div class="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-800">Galeri Lapangan</h3>
-                <span class="px-4 py-2 bg-white border border-slate-200 text-slate-600 font-semibold text-sm rounded-full shadow-sm">Update: 04/05/2026</span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Foto 1 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-video hover:shadow-md hover:-translate-y-1 transition-all">
-                    <img src="/images/pembangunan/ngecor.jpg" alt="Pengecoran Menara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1541888086925-ebca820ff569?auto=format&fit=crop&w=600&q=80'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-bold text-sm">Pengecoran Tingkat 3</p>
-                    </div>
-                </div>
-                
-                <!-- Foto 2 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-video hover:shadow-md hover:-translate-y-1 transition-all">
-                    <img src="/images/pembangunan/pondasi.jpg" alt="Pondasi Menara" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-bold text-sm">Rangka Baja</p>
-                    </div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-video hover:shadow-md hover:-translate-y-1 transition-all">
-                    <img src="/images/pembangunan/pekerja.jpg" alt="Pekerja Bangunan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-bold text-sm">Material</p>
-                    </div>
-                </div>
-                
-                <!-- Foto 4 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-video hover:shadow-md hover:-translate-y-1 transition-all">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Arsitektur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-bold text-sm">Pengecekan Arsitek</p>
-                    </div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-video hover:shadow-md hover:-translate-y-1 transition-all">
-                    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=600&q=80" alt="Material" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-bold text-sm">Pasir & Batu</p>
-                    </div>
-                </div>
-
-                <!-- CTA -->
-                <div class="rounded-2xl overflow-hidden shadow-sm border border-primary-100 aspect-video bg-primary-50 flex flex-col items-center justify-center text-center p-6 hover:shadow-md hover:-translate-y-1 transition-all group">
-                    <div class="w-16 h-16 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary-500 group-hover:text-white transition-all duration-300">
-                        <i class="fas fa-hand-holding-heart text-3xl"></i>
-                    </div>
-                    <h4 class="text-slate-800 font-bold text-xl mb-1">Mari Berwakaf</h4>
-                    <p class="text-slate-500 text-xs font-medium mb-4">Pahala jariyah tak terputus.</p>
-                    <a href="infaq.html" class="px-5 py-2 bg-primary-600 text-white font-semibold text-sm rounded-full shadow-sm hover:bg-primary-700 hover:shadow-md transition-all">Wakaf Sekarang</a>
-                </div>
-            </div>
-        </div>
-
     </main>
 
-    <footer class="bg-white pt-20 pb-10 border-t border-slate-100 mt-auto">
+    <footer class="bg-slate-900 pt-20 pb-10 border-t border-slate-800 text-slate-400 mt-auto">
+        <!-- (Same footer as others) -->
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
                 <div class="md:col-span-5">
-                    <a href="../index.html" class="flex items-center gap-3 text-slate-800 font-extrabold text-2xl tracking-tight mb-6">
-                        <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-10 h-10 rounded-xl bg-white shadow-sm object-contain">
+                    <a href="../index.html" class="flex items-center gap-3 text-white font-serif text-2xl mb-6">
+                        <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-8 h-8 object-contain rounded-sm">
                         Al Ihsan
                     </a>
-                    <p class="text-slate-500 leading-relaxed max-w-sm mb-8">Pusat ibadah dan kegiatan keumatan yang berkomitmen membangun peradaban Islam yang rahmatan lil 'alamin.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                    <p class="font-light leading-relaxed max-w-sm mb-8 text-sm text-slate-400">Membangun pusat ibadah dan kegiatan keumatan yang berkomitmen mewujudkan peradaban Islam yang rahmatan lil 'alamin.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
                 <div class="md:col-span-3">
-                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Tautan Cepat</h4>
-                    <ul class="space-y-3 text-slate-500">
-                        <li><a href="profil.html" class="hover:text-primary-500 transition-colors">Tentang Kami</a></li>
-                        <li><a href="program.html" class="hover:text-primary-500 transition-colors">Program Masjid</a></li>
-                        <li><a href="pembangunan.html" class="hover:text-primary-500 transition-colors">Pembangunan</a></li>
-                        <li><a href="infaq.html" class="hover:text-primary-500 transition-colors">Layanan ZISWAF</a></li>
-                        <li><a href="kontak.html" class="hover:text-primary-500 transition-colors">Hubungi Kami</a></li>
+                    <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="profil.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-white transition-colors">Program Masjid</a></li>
+                        <li><a href="pembangunan.html" class="hover:text-white transition-colors">Pembangunan</a></li>
+                        <li><a href="infaq.html" class="hover:text-white transition-colors">Layanan ZISWAF</a></li>
+                        <li><a href="kontak.html" class="hover:text-white transition-colors">Hubungi Kami</a></li>
                     </ul>
                 </div>
-
                 <div class="md:col-span-4">
-                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Lokasi</h4>
-                    <div class="flex items-start gap-4 text-slate-500">
-                        <i class="fas fa-map-marker-alt text-primary-500 mt-1 text-lg"></i>
-                        <p class="leading-relaxed">Jl. Kebahagiaan No. 99, Kel. Damai, Kec. Sejahtera, Kota Baru, 12345.</p>
+                    <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Lokasi</h4>
+                    <div class="flex items-start gap-4 text-sm font-light">
+                        <i class="fas fa-map-marker-alt text-accent-500 mt-1 text-lg"></i>
+                        <p class="leading-relaxed text-slate-400">Jl. Kebahagiaan No. 99, Kel. Damai,<br>Kec. Sejahtera, Kota Baru, 12345.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-slate-100 pt-8 text-center text-slate-400 text-sm">
-                <p>© 2026 Masjid Al Ihsan. All rights reserved.</p>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light">
+                <p>&copy; 2026 Masjid Al Ihsan. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-white">Syarat & Ketentuan</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script src="../js/script.js"></script>
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        // Lightbox functions specific to this page
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            const caption = el.dataset.caption;
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(e) {
+            if (e.target === document.getElementById('lightbox') || e.target.closest('.lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>

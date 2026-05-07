@@ -4,169 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - Masjid Al Ihsan</title>
+    <meta name="description" content="Mengenal lebih dekat sejarah, visi, misi, dan struktur kepengurusan Masjid Al Ihsan.">
     <link rel="shortcut icon" href="../images/umum/favicon.png" type="image/png">
-    <link rel="icon" href="../images/umum/favicon.png" type="image/png" sizes="any">
-    <link rel="apple-touch-icon" href="../images/umum/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
-                    colors: {
-                        primary: {
-                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80',
-                            500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
-                        }
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
-                        'glow': '0 0 20px rgba(16, 185, 129, 0.4)'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { -webkit-font-smoothing: antialiased; }
-        .glass {
-            background: rgba(255, 255, 255, 0.85) !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
-        }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-    </style>
+    
+    <!-- Tailwind & Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="bg-slate-50 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white relative font-sans text-slate-900">
+<body class="bg-pearl-100 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white font-sans text-slate-800">
 
-    <nav class="fixed w-full z-50 transition-all duration-300 glass py-4" id="navbar">
-        <div class="container mx-auto px-6 relative flex justify-between items-center">
-            <a href="../index.html" class="flex items-center gap-3 font-extrabold text-2xl tracking-tight group">
-                <img src="../images/umum/logo-masjid.png" alt="Logo Masjid Al Ihsan" class="w-10 h-10 object-contain rounded-xl shadow-lg group-hover:scale-105 transition-all duration-300 bg-white p-1">
-                <span class="text-slate-800">Al Ihsan</span>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav py-3" id="navbar">
+        <div class="container mx-auto px-6 max-w-7xl relative flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3 font-serif text-2xl font-bold tracking-wide">
+                <img src="../images/umum/logo-masjid.png" alt="Logo Masjid" class="w-9 h-9 object-contain drop-shadow-sm">
+                <span class="text-primary-950">Al Ihsan</span>
             </a>
-            <div class="hidden md:flex items-center space-x-1 font-semibold">
-                <a href="../index.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Beranda</a>
-                <a href="profil.html" class="text-primary-600 bg-primary-50 px-5 py-2 rounded-full transition-all duration-300">Profil</a>
-                <a href="program.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Program</a>
-                <a href="pembangunan.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Pembangunan</a>
-                <a href="infaq.html" class="text-slate-600 px-5 py-2 hover:bg-slate-100 rounded-full transition-all duration-300">Infaq</a>
-                <a href="kontak.html" class="ml-3 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300">Kontak</a>
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="../index.html" class="text-slate-600 hover:text-primary-800 transition-colors">Beranda</a>
+                <a href="profil.html" class="text-primary-800 border-b-2 border-primary-800 pb-1">Profil</a>
+                <a href="program.html" class="text-slate-600 hover:text-primary-800 transition-colors">Program</a>
+                <a href="pembangunan.html" class="text-slate-600 hover:text-primary-800 transition-colors">Pembangunan</a>
+                <a href="infaq.html" class="text-slate-600 hover:text-primary-800 transition-colors">Infaq</a>
+                <a href="kontak.html" class="ml-4 px-6 py-2 bg-primary-900 text-white rounded hover:bg-primary-800 transition-colors shadow-subtle">Kontak</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-slate-700 text-2xl p-2 rounded-lg hover:bg-slate-100 transition-colors"><i class="fas fa-bars"></i></button>
+            <button id="menu-btn" class="md:hidden text-primary-950 text-2xl p-2" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass p-6 space-y-4 shadow-xl border-t border-slate-100">
-            <a href="../index.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Beranda</a>
-            <a href="profil.html" class="block px-4 py-3 rounded-xl bg-primary-50 text-primary-700 font-bold mobile-link">Profil</a>
-            <a href="program.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Program</a>
-            <a href="pembangunan.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Pembangunan</a>
-            <a href="infaq.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-semibold text-slate-700 mobile-link">Infaq</a>
-            <a href="kontak.html" class="block px-4 py-3 rounded-xl bg-primary-600 font-bold text-white text-center mt-6 shadow-md mobile-link">Kontak Kami</a>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-t border-slate-200 shadow-xl rounded-b-3xl">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="../index.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Beranda</a>
+                <a href="profil.html" class="text-primary-900 font-semibold pb-2 border-b border-slate-100">Profil</a>
+                <a href="program.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Program</a>
+                <a href="pembangunan.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Pembangunan</a>
+                <a href="infaq.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Infaq</a>
+                <a href="kontak.html" class="bg-primary-900 text-white text-center py-4 rounded-xl mt-4 font-bold text-lg shadow-sm">Kontak Kami</a>
+            </div>
         </div>
     </nav>
 
-    <header class="pt-32 md:pt-44 pb-16 md:pb-24 bg-gradient-to-b from-primary-50 to-slate-50 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl -z-0 -translate-x-1/2 translate-y-1/2"></div>
+    <header class="pt-32 md:pt-40 pb-16 md:pb-24 bg-pearl-200 border-b border-slate-200 relative overflow-hidden section-pattern">
         <div class="container mx-auto px-6 text-center relative z-10 fade-in-up">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 mb-4 tracking-tight">Tentang <span class="text-primary-600">Al Ihsan</span></h1>
-            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Mengenal lebih dekat sejarah, visi, dan pengurus yang berdedikasi dalam melayani umat.</p>
+            <span class="text-accent-600 font-semibold tracking-widest uppercase text-xs">Mengenal Lebih Dekat</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-950 mt-3 mb-6">Profil Masjid</h1>
+            <p class="text-slate-600 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Menelusuri sejarah, memahami visi, dan mengenal struktur kepengurusan Masjid Al Ihsan.</p>
         </div>
     </header>
 
-    <main class="flex-grow container mx-auto px-4 md:px-6 pb-16 md:pb-24 relative z-20 mt-10">
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden fade-in-up" style="animation-delay: 0.2s;">
-            <!-- TABS HEADER -->
-            <div class="flex p-2 bg-slate-50 border-b border-slate-100 overflow-x-auto hide-scrollbar">
-                <button class="tab-btn flex-1 py-3 px-4 font-bold text-primary-600 bg-white shadow-sm rounded-xl transition-all whitespace-nowrap text-sm md:text-base" data-target="sejarah">
-                    <i class="fas fa-history mr-2"></i> Sejarah
-                </button>
-                <button class="tab-btn flex-1 py-3 px-4 font-semibold text-slate-500 hover:text-slate-800 rounded-xl transition-all whitespace-nowrap text-sm md:text-base" data-target="visi">
-                    <i class="fas fa-eye mr-2"></i> Visi & Misi
-                </button>
-                <button class="tab-btn flex-1 py-3 px-4 font-semibold text-slate-500 hover:text-slate-800 rounded-xl transition-all whitespace-nowrap text-sm md:text-base" data-target="struktur">
-                    <i class="fas fa-users mr-2"></i> Pengurus
-                </button>
-            </div>
-
-            <!-- TABS CONTENT -->
-            <div class="p-6 md:p-12">
-                <div id="sejarah" class="tab-content fade-in-up">
-                    <h3 class="text-2xl font-bold mb-6 text-slate-800 flex items-center gap-3">
-                        <span class="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center"><i class="fas fa-book-open"></i></span>
-                        Sejarah Singkat
-                    </h3>
-                    <div class="prose prose-slate max-w-none text-slate-600 font-medium space-y-6 leading-relaxed">
-                        <p>Masjid Al Ihsan didirikan pada tahun 2010. Berawal dari sebuah musholla kecil berukuran 6x6 meter yang dibangun secara swadaya oleh masyarakat setempat.</p>
-                        <p>Seiring berkembangnya jumlah jamaah dan kebutuhan masyarakat, pada tahun 2015 dilakukan renovasi besar-besaran untuk memperluas bangunan dan menambah fasilitas pendukung seperti ruang kelas TPA dan kantor sekretariat.</p>
-                        <p>Alhamdulillah, kini Masjid Al Ihsan tidak hanya menjadi tempat ibadah mahdhah, tetapi juga pusat kegiatan sosial, pendidikan, dan pemberdayaan ekonomi umat di lingkungan sekitar.</p>
-                    </div>
+    <main class="flex-grow container mx-auto px-4 md:px-6 pb-20 relative z-20 -mt-10">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Tabs Navigation -->
+            <div class="tabs-container">
+                <div class="flex flex-col sm:flex-row mb-10 bg-white p-2 rounded shadow-subtle border border-slate-200/60 text-sm font-medium">
+                    <button class="tab-btn flex-1 py-3 px-4 bg-primary-50 text-primary-800 rounded transition-all" data-target="sejarah">
+                        Sejarah
+                    </button>
+                    <button class="tab-btn flex-1 py-3 px-4 bg-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded transition-all" data-target="visi">
+                        Visi & Misi
+                    </button>
+                    <button class="tab-btn flex-1 py-3 px-4 bg-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50 rounded transition-all" data-target="struktur">
+                        Pengurus
+                    </button>
                 </div>
 
-                <div id="visi" class="tab-content hidden fade-in-up">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-primary-50 p-8 rounded-3xl border border-primary-100 shadow-sm relative overflow-hidden group hover:-translate-y-1 transition-transform">
-                            <div class="w-12 h-12 rounded-2xl bg-white text-primary-600 flex items-center justify-center text-2xl mb-6 shadow-sm">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4 class="font-bold text-2xl text-slate-800 mb-4">Visi</h4>
-                            <p class="text-slate-600 font-medium leading-relaxed">"Terwujudnya masyarakat madani yang berlandaskan Al-Qur'an dan As-Sunnah."</p>
+                <!-- Tab: Sejarah -->
+                <div id="sejarah" class="tab-content bg-white rounded shadow-subtle border border-slate-200/60 p-8 md:p-12 animate-fade-in-up">
+                    <div class="flex flex-col md:flex-row gap-10 items-center">
+                        <div class="w-full md:w-1/2">
+                            <img src="../images/profil/sejarah.jpg" alt="Sejarah Masjid" class="w-full object-cover shadow-sm aspect-video border border-slate-100 rounded-sm" onerror="this.src='https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=800&q=80'">
                         </div>
-                        <div class="bg-amber-50 p-8 rounded-3xl border border-amber-100 shadow-sm relative overflow-hidden group hover:-translate-y-1 transition-transform">
-                            <div class="w-12 h-12 rounded-2xl bg-white text-amber-500 flex items-center justify-center text-2xl mb-6 shadow-sm">
-                                <i class="fas fa-bullseye"></i>
-                            </div>
-                            <h4 class="font-bold text-2xl text-slate-800 mb-4">Misi</h4>
-                            <ul class="space-y-4 text-slate-600 font-medium">
-                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i> Menyelenggarakan peribadatan nyaman.</li>
-                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i> Menyelenggarakan pendidikan agama.</li>
-                                <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i> Mengelola dana ZISWAF profesional.</li>
-                            </ul>
+                        <div class="w-full md:w-1/2 space-y-6 text-slate-600 leading-relaxed font-light">
+                            <h2 class="text-3xl font-serif text-primary-950 mb-2">Awal Mula</h2>
+                            <div class="w-12 h-0.5 bg-accent-500 mb-6"></div>
+                            <p>Masjid Al Ihsan didirikan pada tahun 1995 oleh para tokoh masyarakat setempat yang merindukan adanya pusat ibadah yang representatif. Berawal dari sebuah langgar kecil berukuran 6x6 meter yang dibangun di atas tanah wakaf dari H. Abdullah.</p>
+                            <p>Seiring bertambahnya jamaah dan kebutuhan umat, pada tahun 2005 dilakukan renovasi total pertama yang memperluas bangunan utama menjadi 15x15 meter. Pada tahun 2015, Masjid Al Ihsan kembali dipugar menjadi bangunan dua lantai seperti yang terlihat saat ini, dengan fasilitas yang lebih modern dan ramah lingkungan.</p>
                         </div>
                     </div>
                 </div>
 
-                <div id="struktur" class="tab-content hidden fade-in-up">
-                    <h3 class="text-2xl font-bold mb-8 text-slate-800 flex items-center gap-3">
-                        <span class="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center"><i class="fas fa-sitemap"></i></span>
-                        Struktur DKM
-                    </h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                        <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:-translate-y-2 hover:shadow-md transition-all duration-300">
-                            <div class="w-24 h-24 bg-slate-100 rounded-full mx-auto mb-4 overflow-hidden relative group">
-                                <img src="https://ui-avatars.com/api/?name=H.+Ahmad&background=22c55e&color=fff&size=150" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" alt="Ketua">
-                            </div>
-                            <h5 class="font-bold text-slate-800 mb-1">H. Ahmad</h5>
-                            <p class="text-xs font-semibold text-primary-600 bg-primary-50 rounded-full py-1 px-3 inline-block mt-1">Ketua Umum</p>
+                <!-- Tab: Visi & Misi -->
+                <div id="visi" class="tab-content hidden bg-white rounded shadow-subtle border border-slate-200/60 p-8 md:p-12">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-serif text-primary-950 mb-6">Visi Kami</h2>
+                        <p class="text-xl md:text-2xl font-serif italic text-slate-700 leading-relaxed max-w-2xl mx-auto">"Menjadi pusat ibadah dan peradaban umat yang melahirkan generasi Rabbani, mandiri, dan bermanfaat bagi semesta."</p>
+                    </div>
+                    
+                    <div class="text-center mb-10">
+                        <h2 class="text-2xl font-serif text-primary-950 inline-block relative">
+                            Misi Utama
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-accent-500"></div>
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                        <div class="flex gap-5 items-start p-6 border border-slate-100 bg-pearl-50">
+                            <span class="text-3xl text-primary-200 font-serif font-bold">01</span>
+                            <p class="text-slate-600 font-light leading-relaxed">Menyelenggarakan ibadah fardhu dan sunnah dengan tertib, khusyuk, dan sesuai sunnah.</p>
                         </div>
-                        <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:-translate-y-2 hover:shadow-md transition-all duration-300">
-                            <div class="w-24 h-24 bg-slate-100 rounded-full mx-auto mb-4 overflow-hidden relative group">
-                                <img src="https://ui-avatars.com/api/?name=Ust.+Budi&background=f59e0b&color=fff&size=150" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" alt="Sekretaris">
-                            </div>
-                            <h5 class="font-bold text-slate-800 mb-1">Ust. Budi</h5>
-                            <p class="text-xs font-semibold text-amber-600 bg-amber-50 rounded-full py-1 px-3 inline-block mt-1">Sekretaris</p>
+                        <div class="flex gap-5 items-start p-6 border border-slate-100 bg-pearl-50">
+                            <span class="text-3xl text-primary-200 font-serif font-bold">02</span>
+                            <p class="text-slate-600 font-light leading-relaxed">Menyelenggarakan program pendidikan Islam untuk segala usia (TPA, Tahsin, Kajian).</p>
                         </div>
-                        <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:-translate-y-2 hover:shadow-md transition-all duration-300">
-                            <div class="w-24 h-24 bg-slate-100 rounded-full mx-auto mb-4 overflow-hidden relative group">
-                                <img src="https://ui-avatars.com/api/?name=Rizal+F&background=0ea5e9&color=fff&size=150" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" alt="Bendahara">
-                            </div>
-                            <h5 class="font-bold text-slate-800 mb-1">Rizal F.</h5>
-                            <p class="text-xs font-semibold text-sky-600 bg-sky-50 rounded-full py-1 px-3 inline-block mt-1">Bendahara</p>
+                        <div class="flex gap-5 items-start p-6 border border-slate-100 bg-pearl-50">
+                            <span class="text-3xl text-primary-200 font-serif font-bold">03</span>
+                            <p class="text-slate-600 font-light leading-relaxed">Memberdayakan ekonomi umat melalui optimalisasi ZISWAF dan program kewirausahaan.</p>
                         </div>
-                        <div class="p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:-translate-y-2 hover:shadow-md transition-all duration-300">
-                            <div class="w-24 h-24 bg-slate-100 rounded-full mx-auto mb-4 overflow-hidden relative group">
-                                <img src="https://ui-avatars.com/api/?name=Irwan&background=ec4899&color=fff&size=150" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" alt="Humas">
+                        <div class="flex gap-5 items-start p-6 border border-slate-100 bg-pearl-50">
+                            <span class="text-3xl text-primary-200 font-serif font-bold">04</span>
+                            <p class="text-slate-600 font-light leading-relaxed">Memperkuat ukhuwah Islamiyah melalui kegiatan sosial dan kemasyarakatan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Struktur DKM -->
+                <div id="struktur" class="tab-content hidden bg-white rounded shadow-subtle border border-slate-200/60 p-8 md:p-12">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-serif text-primary-950 mb-4">Dewan Kemakmuran Masjid</h2>
+                        <div class="w-12 h-0.5 bg-accent-500 mx-auto"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center mt-12">
+                        <div class="group">
+                            <div class="w-28 h-28 mx-auto mb-5 rounded-full overflow-hidden border-4 border-pearl-200 group-hover:border-primary-100 transition-colors">
+                                <img src="../images/profil/pengurus-1.jpg" alt="Ketua DKM" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://ui-avatars.com/api/?name=Ahmad+Fauzi&background=f5f5f0&color=0f172a&size=150'">
                             </div>
-                            <h5 class="font-bold text-slate-800 mb-1">Irwan S.</h5>
-                            <p class="text-xs font-semibold text-pink-600 bg-pink-50 rounded-full py-1 px-3 inline-block mt-1">Humas</p>
+                            <h4 class="font-serif font-bold text-lg text-primary-950">H. Ahmad Fauzi</h4>
+                            <p class="text-slate-500 text-xs uppercase tracking-widest mt-2">Ketua DKM</p>
+                        </div>
+                        <div class="group">
+                            <div class="w-28 h-28 mx-auto mb-5 rounded-full overflow-hidden border-4 border-pearl-200 group-hover:border-primary-100 transition-colors">
+                                <img src="../images/profil/pengurus-2.jpg" alt="Sekretaris" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://ui-avatars.com/api/?name=Budi+Santoso&background=f5f5f0&color=0f172a&size=150'">
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-primary-950">Ust. Budi Santoso</h4>
+                            <p class="text-slate-500 text-xs uppercase tracking-widest mt-2">Sekretaris</p>
+                        </div>
+                        <div class="group">
+                            <div class="w-28 h-28 mx-auto mb-5 rounded-full overflow-hidden border-4 border-pearl-200 group-hover:border-primary-100 transition-colors">
+                                <img src="../images/profil/pengurus-3.jpg" alt="Bendahara" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" onerror="this.src='https://ui-avatars.com/api/?name=Candra+Wijaya&background=f5f5f0&color=0f172a&size=150'">
+                            </div>
+                            <h4 class="font-serif font-bold text-lg text-primary-950">H. Candra Wijaya</h4>
+                            <p class="text-slate-500 text-xs uppercase tracking-widest mt-2">Bendahara</p>
                         </div>
                     </div>
                 </div>
@@ -174,67 +164,54 @@
         </div>
     </main>
 
-    <footer class="bg-white pt-20 pb-10 border-t border-slate-100 mt-auto">
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 pt-20 pb-10 border-t border-slate-800 text-slate-400 mt-auto">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
                 <div class="md:col-span-5">
-                    <a href="../index.html" class="flex items-center gap-3 text-slate-800 font-extrabold text-2xl tracking-tight mb-6">
-                        <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-10 h-10 rounded-xl bg-white shadow-sm object-contain">
+                    <a href="../index.html" class="flex items-center gap-3 text-white font-serif text-2xl mb-6">
+                        <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-8 h-8 object-contain rounded-sm">
                         Al Ihsan
                     </a>
-                    <p class="text-slate-500 leading-relaxed max-w-sm mb-8">Pusat ibadah dan kegiatan keumatan yang berkomitmen membangun peradaban Islam yang rahmatan lil 'alamin.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 text-slate-500 flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all"><i class="fab fa-youtube"></i></a>
+                    <p class="font-light leading-relaxed max-w-sm mb-8 text-sm text-slate-400">Membangun pusat ibadah dan kegiatan keumatan yang berkomitmen mewujudkan peradaban Islam yang rahmatan lil 'alamin.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="md:col-span-3">
-                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Tautan Cepat</h4>
-                    <ul class="space-y-3 text-slate-500">
-                        <li><a href="profil.html" class="hover:text-primary-500 transition-colors">Tentang Kami</a></li>
-                        <li><a href="program.html" class="hover:text-primary-500 transition-colors">Program Masjid</a></li>
-                        <li><a href="pembangunan.html" class="hover:text-primary-500 transition-colors">Pembangunan</a></li>
-                        <li><a href="infaq.html" class="hover:text-primary-500 transition-colors">Layanan ZISWAF</a></li>
-                        <li><a href="kontak.html" class="hover:text-primary-500 transition-colors">Hubungi Kami</a></li>
+                    <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="profil.html" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-white transition-colors">Program Masjid</a></li>
+                        <li><a href="pembangunan.html" class="hover:text-white transition-colors">Pembangunan</a></li>
+                        <li><a href="infaq.html" class="hover:text-white transition-colors">Layanan ZISWAF</a></li>
+                        <li><a href="kontak.html" class="hover:text-white transition-colors">Hubungi Kami</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-4">
-                    <h4 class="text-slate-800 font-bold mb-6 uppercase text-sm tracking-wider">Lokasi</h4>
-                    <div class="flex items-start gap-4 text-slate-500">
-                        <i class="fas fa-map-marker-alt text-primary-500 mt-1 text-lg"></i>
-                        <p class="leading-relaxed">Jl. Kebahagiaan No. 99, Kel. Damai, Kec. Sejahtera, Kota Baru, 12345.</p>
+                    <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Lokasi</h4>
+                    <div class="flex items-start gap-4 text-sm font-light">
+                        <i class="fas fa-map-marker-alt text-accent-500 mt-1 text-lg"></i>
+                        <p class="leading-relaxed text-slate-400">Jl. Kebahagiaan No. 99, Kel. Damai,<br>Kec. Sejahtera, Kota Baru, 12345.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-slate-100 pt-8 text-center text-slate-400 text-sm">
-                <p>© 2026 Masjid Al Ihsan. All rights reserved.</p>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light">
+                <p>&copy; 2026 Masjid Al Ihsan. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-white">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-white">Syarat & Ketentuan</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-
-        const tabs = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => {
-                    t.classList.remove('bg-white', 'text-primary-600', 'shadow-sm');
-                    t.classList.add('text-slate-500', 'hover:text-slate-800');
-                });
-                contents.forEach(c => c.classList.add('hidden'));
-                tab.classList.remove('text-slate-500', 'hover:text-slate-800');
-                tab.classList.add('bg-white', 'text-primary-600', 'shadow-sm');
-                document.getElementById(tab.dataset.target).classList.remove('hidden');
-            });
-        });
-    </script>
+    <!-- SCRIPTS -->
+    <script src="../js/script.js"></script>
 </body>
 </html>
