@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Program - Masjid Al Ihsan</title>
-    <meta name="description" content="Berbagai kegiatan dan layanan yang kami selenggarakan untuk memakmurkan umat di Masjid Al Ihsan.">
+    <meta name="description"
+        content="Berbagai kegiatan dan layanan yang kami selenggarakan untuk memakmurkan umat di Masjid Al Ihsan.">
     <link rel="shortcut icon" href="../images/umum/favicon.png" type="image/png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Tailwind & Custom Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind-config.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="bg-pearl-100 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white font-sans text-slate-800">
+
+<body
+    class="bg-pearl-100 flex flex-col min-h-screen selection:bg-primary-500 selection:text-white font-sans text-slate-800">
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 transition-all duration-300 glass-nav py-3" id="navbar">
         <div class="container mx-auto px-6 max-w-7xl relative flex justify-between items-center">
             <a href="../index.html" class="flex items-center gap-3 font-serif text-2xl font-bold tracking-wide">
-                <img src="../images/umum/logo-masjid-removebg.png" alt="Logo Masjid" class="w-9 h-9 object-contain drop-shadow-sm">
+                <img src="../images/umum/logo-masjid-removebg.png" alt="Logo Masjid"
+                    class="w-9 h-9 object-contain drop-shadow-sm">
                 <span class="text-primary-950">Al Ihsan</span>
             </a>
             <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a href="../index.html" class="text-slate-600 hover:text-primary-800 transition-colors">Beranda</a>
                 <a href="profil.html" class="text-slate-600 hover:text-primary-800 transition-colors">Profil</a>
                 <a href="program.html" class="text-primary-800 border-b-2 border-primary-800 pb-1">Program</a>
-                <a href="pembangunan.html" class="text-slate-600 hover:text-primary-800 transition-colors">Pembangunan</a>
+                <a href="pembangunan.html"
+                    class="text-slate-600 hover:text-primary-800 transition-colors">Pembangunan</a>
                 <a href="infaq.html" class="text-slate-600 hover:text-primary-800 transition-colors">Infaq</a>
-                <a href="kontak.html" class="ml-4 px-6 py-2 bg-primary-900 text-white rounded hover:bg-primary-800 transition-colors shadow-subtle">Kontak</a>
+                <a href="kontak.html"
+                    class="ml-4 px-6 py-2 bg-primary-900 text-white rounded hover:bg-primary-800 transition-colors shadow-subtle">Kontak</a>
             </div>
             <button id="menu-btn" class="md:hidden text-primary-950 text-2xl p-2" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-t border-slate-200 shadow-xl rounded-b-3xl">
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-full left-0 w-full glass-panel border-t border-slate-200 shadow-xl rounded-b-3xl">
             <div class="flex flex-col p-6 space-y-4">
-                <a href="../index.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Beranda</a>
-                <a href="profil.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Profil</a>
+                <a href="../index.html"
+                    class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Beranda</a>
+                <a href="profil.html"
+                    class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Profil</a>
                 <a href="program.html" class="text-primary-900 font-semibold pb-2 border-b border-slate-100">Program</a>
-                <a href="pembangunan.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Pembangunan</a>
-                <a href="infaq.html" class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Infaq</a>
-                <a href="kontak.html" class="bg-primary-900 text-white text-center py-4 rounded-xl mt-4 font-bold text-lg shadow-sm">Kontak Kami</a>
+                <a href="pembangunan.html"
+                    class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Pembangunan</a>
+                <a href="infaq.html"
+                    class="text-slate-600 hover:text-primary-900 pb-2 border-b border-slate-100">Infaq</a>
+                <a href="kontak.html"
+                    class="bg-primary-900 text-white text-center py-4 rounded-xl mt-4 font-bold text-lg shadow-sm">Kontak
+                    Kami</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 md:pt-40 pb-16 md:pb-24 bg-pearl-200 border-b border-slate-200 relative overflow-hidden section-pattern">
+    <header
+        class="pt-32 md:pt-40 pb-16 md:pb-24 bg-pearl-200 border-b border-slate-200 relative overflow-hidden section-pattern">
         <div class="container mx-auto px-6 text-center relative z-10 fade-in-up">
             <span class="text-accent-600 font-semibold tracking-widest uppercase text-xs">Layanan & Fasilitas</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-950 mt-3 mb-6">Program Masjid</h1>
-            <p class="text-slate-600 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Berbagai kegiatan dan layanan yang kami selenggarakan untuk memakmurkan umat.</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-950 mt-3 mb-6">Program Masjid
+            </h1>
+            <p class="text-slate-600 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Berbagai kegiatan
+                dan layanan yang kami selenggarakan untuk memakmurkan umat.</p>
         </div>
     </header>
 
@@ -68,108 +87,169 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- Card 1: TK -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up">
+                <div
+                    class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/tk.png" alt="TK Al-Ihsan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80'">
+                        <img src="../images/program/tk.png" alt="TK Al-Ihsan"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
                             <i class="fa-solid fa-book-quran text-accent-400"></i> Pendidikan
                         </span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">TK Al-Ihsan</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Pendidikan usia dini dengan kurikulum berlandaskan Islam, menggabungkan kecerdasan kognitif, spiritual, dan sosial.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Pendidikan usia dini
+                            dengan kurikulum berlandaskan Islam, menggabungkan kecerdasan kognitif, spiritual, dan
+                            sosial.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Senin - Jumat, 07.00 - 11.00</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2: Kajian -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up" style="animation-delay: 0.1s;">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/kajian.jpg" alt="Kajian Tafsir dan Hadits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1585036156171-384164a8c673?auto=format&fit=crop&w=800&q=80'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    <div class="h-56 relative group/slider">
+                        <!-- Slider Container -->
+                        <div class="w-full h-full overflow-hidden">
+                            <div class="w-full h-full flex slider-track">
+                                <img src="../images/program/pengajian_malam_rabu.jpeg" alt="Kajian 1"
+                                    class="w-full h-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-700"
+                                    onerror="this.src='https://images.unsplash.com/photo-1585036156171-384164a8c673?auto=format&fit=crop&w=800&q=80'">
+                                <img src="../images/program/pengajian_malam_rabu2.jpeg" alt="Kajian 2"
+                                    class="w-full h-full object-cover flex-shrink-0 group-hover:scale-105 transition-transform duration-700"
+                                    onerror="this.src='https://images.unsplash.com/photo-1585036156171-384164a8c673?auto=format&fit=crop&w=800&q=80'">
+                            </div>
+                        </div>
+                        <!-- Overlay & Label -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent pointer-events-none">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2 pointer-events-none">
                             <i class="fa-solid fa-users-rectangle text-accent-400"></i> Kajian Ilmu
                         </span>
+                        <!-- Left Button -->
+                        <button onclick="slideGallery(this, 'left')" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-sm transition-colors z-10" aria-label="Geser Kiri">
+                            <i class="fas fa-chevron-left text-sm"></i>
+                        </button>
+                        <!-- Right Button -->
+                        <button onclick="slideGallery(this, 'right')" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-sm transition-colors z-10" aria-label="Geser Kanan">
+                            <i class="fas fa-chevron-right text-sm"></i>
+                        </button>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">Kajian Tafsir &amp; Hadits</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Majelis ilmu rutin untuk jamaah umum yang membahas kitab-kitab tafsir dan kumpulan hadits pilihan, guna memperdalam pemahaman agama.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Majelis ilmu rutin
+                            untuk jamaah umum yang membahas kitab-kitab tafsir dan kumpulan hadits pilihan, guna
+                            memperdalam pemahaman agama.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Ba'da Maghrib, Sabtu</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3: ZISWAF -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up" style="animation-delay: 0.2s;">
+                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up"
+                    style="animation-delay: 0.2s;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/ziswaf.jpg" alt="Layanan ZISWAF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80'">
+                        <img src="../images/program/ziswaf.jpg" alt="Layanan ZISWAF"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
                             <i class="fa-solid fa-hand-holding-heart text-accent-400"></i> ZISWAF
                         </span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">Layanan ZISWAF</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Penerimaan dan penyaluran Zakat, Infaq, Sadaqah, dan Wakaf secara transparan, disalurkan tepat sasaran untuk mustahik dan operasional masjid.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Penerimaan dan
+                            penyaluran Zakat, Infaq, Sadaqah, dan Wakaf secara transparan, disalurkan tepat sasaran
+                            untuk mustahik dan operasional masjid.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Setiap Hari (24 Jam)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 4: Jumat Berkah -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up" style="animation-delay: 0.3s;">
+                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up"
+                    style="animation-delay: 0.3s;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/jumat_berkah.jpg" alt="Jumat Berkah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1593113511832-8456de9ee1d7?auto=format&fit=crop&w=800&q=80'">
+                        <img src="../images/program/jumat_berkah.jpg" alt="Jumat Berkah"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://images.unsplash.com/photo-1593113511832-8456de9ee1d7?auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
                             <i class="fa-solid fa-utensils text-accent-400"></i> Sosial
                         </span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">Jumat Berkah</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Program pembagian makanan gratis setelah shalat Jumat untuk jamaah dan musafir. Didanai penuh dari infaq khusus jamaah.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Program pembagian
+                            makanan gratis setelah shalat Jumat untuk jamaah dan musafir. Didanai penuh dari infaq
+                            khusus jamaah.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Ba'da Jumat</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 5: Ambulan -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up" style="animation-delay: 0.4s;">
+                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up"
+                    style="animation-delay: 0.4s;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/ambulan.jpg" alt="Ambulan Siaga" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80'">
+                        <img src="../images/program/ambulan.jpg" alt="Ambulan Siaga"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
                             <i class="fa-solid fa-truck-medical text-accent-400"></i> Kesehatan
                         </span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">Ambulan Gratis</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Fasilitas peminjaman ambulan untuk antar jemput pasien dhuafa, musibah kedukaan, dan pengurusan jenazah bagi warga jamaah.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Fasilitas peminjaman
+                            ambulan untuk antar jemput pasien dhuafa, musibah kedukaan, dan pengurusan jenazah bagi
+                            warga jamaah.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Layanan 24 Jam</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 6: Risma -->
-                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up" style="animation-delay: 0.5s;">
+                <div class="group bg-white rounded-sm shadow-subtle border border-slate-100 hover:border-primary-200 transition-all flex flex-col fade-in-up"
+                    style="animation-delay: 0.5s;">
                     <div class="h-56 overflow-hidden relative">
-                        <img src="../images/program/risma.jpg" alt="Remaja Masjid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80'">
+                        <img src="../images/program/risma.jpg" alt="Remaja Masjid"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80'">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary-950/80 to-transparent"></div>
-                        <span class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
+                        <span
+                            class="absolute bottom-4 left-4 text-white text-xs font-semibold tracking-wider uppercase flex items-center gap-2">
                             <i class="fa-solid fa-users text-accent-400"></i> Kepemudaan
                         </span>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-serif font-bold text-primary-950 mb-3">Remaja Masjid (Risma)</h3>
-                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Wadah berkumpulnya generasi muda Islam untuk mengadakan berbagai kegiatan positif, olahraga panahan, dan kajian tematik pemuda.</p>
-                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
+                        <p class="text-slate-600 font-light leading-relaxed text-sm flex-grow mb-6">Wadah berkumpulnya
+                            generasi muda Islam untuk mengadakan berbagai kegiatan positif, olahraga panahan, dan kajian
+                            tematik pemuda.</p>
+                        <div
+                            class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-medium text-slate-500">
                             <span><i class="far fa-clock mr-2 text-primary-700"></i>Ahad, 08.00</span>
                         </div>
                     </div>
@@ -188,14 +268,21 @@
                         <img src="../images/umum/logo-masjid.png" alt="Logo" class="w-8 h-8 object-contain rounded-sm">
                         Al Ihsan
                     </a>
-                    <p class="font-light leading-relaxed max-w-sm mb-8 text-sm text-slate-400">Membangun pusat ibadah dan kegiatan keumatan yang berkomitmen mewujudkan peradaban Islam yang rahmatan lil 'alamin.</p>
+                    <p class="font-light leading-relaxed max-w-sm mb-8 text-sm text-slate-400">Membangun pusat ibadah
+                        dan kegiatan keumatan yang berkomitmen mewujudkan peradaban Islam yang rahmatan lil 'alamin.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:text-white transition-colors"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="md:col-span-3">
                     <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Tautan Cepat</h4>
                     <ul class="space-y-3 text-sm font-light">
@@ -211,12 +298,14 @@
                     <h4 class="text-white font-medium mb-6 uppercase text-xs tracking-widest">Lokasi</h4>
                     <div class="flex items-start gap-4 text-sm font-light">
                         <i class="fas fa-map-marker-alt text-accent-500 mt-1 text-lg"></i>
-                        <p class="leading-relaxed text-slate-400">Jl. Kebahagiaan No. 99, Kel. Damai,<br>Kec. Sejahtera, Kota Baru, 12345.</p>
+                        <p class="leading-relaxed text-slate-400">Jl. Kebahagiaan No. 99, Kel. Damai,<br>Kec. Sejahtera,
+                            Kota Baru, 12345.</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light">
+
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-light">
                 <p>&copy; 2026 Masjid Al Ihsan. All rights reserved.</p>
                 <div class="mt-4 md:mt-0 space-x-4">
                     <a href="#" class="hover:text-white">Kebijakan Privasi</a>
@@ -229,4 +318,5 @@
     <!-- SCRIPTS -->
     <script src="../js/script.js"></script>
 </body>
+
 </html>

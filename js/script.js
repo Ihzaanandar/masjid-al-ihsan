@@ -93,3 +93,38 @@ function initNavbarEffect() {
         }
     }
 }
+
+// ============================================
+// GALLERY SLIDER - Infinite Scroll
+// ============================================
+function slideGallery(btn, direction) {
+    const track = btn.parentElement.querySelector('.slider-track');
+    if (!track || track.dataset.isAnimating === 'true') return;
+    track.dataset.isAnimating = 'true';
+
+    if (direction === 'right') {
+        track.style.transition = 'transform 0.4s ease-in-out';
+        track.style.transform = 'translateX(-100%)';
+        
+        setTimeout(() => {
+            track.style.transition = 'none';
+            track.appendChild(track.firstElementChild);
+            track.style.transform = 'translateX(0)';
+            track.dataset.isAnimating = 'false';
+        }, 400);
+    } else {
+        track.style.transition = 'none';
+        track.prepend(track.lastElementChild);
+        track.style.transform = 'translateX(-100%)';
+        
+        // Memaksa browser render ulang posisi elemen
+        void track.offsetWidth;
+        
+        track.style.transition = 'transform 0.4s ease-in-out';
+        track.style.transform = 'translateX(0)';
+        
+        setTimeout(() => {
+            track.dataset.isAnimating = 'false';
+        }, 400);
+    }
+}
